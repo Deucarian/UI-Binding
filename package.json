@@ -7,6 +7,10 @@
   "author": {
     "name": "Deucarian"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deucarian/UI-Binding.git"
+  },
   "keywords": [
     "ui",
     "ugui",
