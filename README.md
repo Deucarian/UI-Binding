@@ -36,7 +36,7 @@ For local development, reference the package by file path from a separate Unity 
 
 `ReplaceAll` is the synchronization operation. It updates existing keyed items, adds new keyed items, removes missing keyed items, and reorders transforms to match the input collection.
 
-Visual strategies are optional. `UIBinding` decides which item view belongs to which data key; a caller supplies the selected or hovered key explicitly, and an `IUIBindingItemVisual<TKey, T>` decides how normal, selected, and hovered states look. Selection state and visual representation stay separate, so CoreState bridges, ObjectSelection bridges, DOTween visuals, custom tween packages, outline renderers, shader effects, Animator states, or VFX can be added without changing the container architecture.
+Visual strategies are optional. `UIBinding` decides which item view belongs to which data key; a caller supplies the selected or hovered key explicitly, and an `IUIBindingItemVisual<TKey, T>` decides how normal, selected, and hovered states look. Selection state and visual representation stay separate, so CoreState integrations, ObjectSelection integrations, DOTween visuals, custom tween packages, outline renderers, shader effects, Animator states, or VFX can be added without changing the container architecture.
 
 Nested UI support is composition. A parent item can own its own child `UIBindingContainer<TChild, TChildKey>` under one of its child transforms. Child keys are scoped to the parent item that owns the child container.
 
@@ -136,7 +136,7 @@ It can be composed with Core State in project code by using repository items as 
 
 ## Versioning
 
-Current package version: `1.0.0`.
+Current package version: `1.0.1`.
 
 Branch strategy:
 

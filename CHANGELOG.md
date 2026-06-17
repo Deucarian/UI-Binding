@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 - 2026-06-17
+
+- Renamed package ecosystem references from CoreState bridge packages to Integration packages.
+
 ## Unreleased
 
 - Added optional item visual strategy support for normal, selected, and hovered UI item states.

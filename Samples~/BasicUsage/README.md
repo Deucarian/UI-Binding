@@ -29,7 +29,7 @@ _container = new UIBindingContainer<ExampleItemData, string>(
         hoveredColor));
 ```
 
-Selection visuals are supplied explicitly by key. `UIBinding` does not know where the selected key came from; a project, bridge, input adapter, or state package can call `SetSelectedKey(key)` or `ClearSelectedKey()` when appropriate.
+Selection visuals are supplied explicitly by key. `UIBinding` does not know where the selected key came from; a project, integration, input adapter, or state package can call `SetSelectedKey(key)` or `ClearSelectedKey()` when appropriate.
 
 ## Nested Categories
 
