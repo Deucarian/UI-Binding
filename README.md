@@ -153,3 +153,9 @@ Use a commit hash or release tag for immutable installs when the repository publ
 - Keys must be non-null and unique within each container.
 - The package does not provide MVVM, data persistence, app state management, hidden selection synchronization, pooling, virtualization, or async loading.
 - Nested UI is built by composing containers in item components; there is no separate nested-container framework.
+
+## Architecture / Contributor Notes
+
+- [AGENTS.md](AGENTS.md) contains repository-specific ownership and Codex guidance.
+- Deucarian architecture rules live in [Package Registry](https://github.com/Deucarian/Package-Registry/blob/develop/ARCHITECTURE.md).
+- Capability ownership is tracked in [CAPABILITY_OWNERSHIP.md](https://github.com/Deucarian/Package-Registry/blob/develop/CAPABILITY_OWNERSHIP.md).
