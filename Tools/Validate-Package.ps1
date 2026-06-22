@@ -47,9 +47,17 @@ if ($package.dependencies."com.unity.ugui" -ne "1.0.0") {
     throw "Expected dependency com.unity.ugui version 1.0.0"
 }
 
+if ($package.dependencies."com.deucarian.common" -ne "0.1.0") {
+    throw "Expected dependency com.deucarian.common version 0.1.0"
+}
+
 $runtimeAsmdef = Get-Content -LiteralPath (Join-Path $root "Runtime/Deucarian.UIBinding.asmdef") -Raw | ConvertFrom-Json
 if ($runtimeAsmdef.name -ne "Deucarian.UIBinding") {
     throw "Unexpected runtime asmdef name: $($runtimeAsmdef.name)"
+}
+
+if ($runtimeAsmdef.references -notcontains "Deucarian.Common") {
+    throw "Runtime asmdef must reference Deucarian.Common"
 }
 
 if ($runtimeAsmdef.references -contains "UnityEditor") {

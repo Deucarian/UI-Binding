@@ -2,6 +2,7 @@
   "name": "Deucarian.UIBinding",
   "rootNamespace": "Deucarian.UIBinding",
   "references": [
+    "Deucarian.Common",
     "Unity.ugui"
   ],
   "includePlatforms": [],

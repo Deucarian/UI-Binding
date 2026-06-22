@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0 - 2026-06-22
+
+- Added `com.deucarian.common` as a runtime dependency for safe generated-item cleanup.
+- Replaced the private Play Mode/Edit Mode destruction helper with `UnityObjectUtility.DestroySafely`.
+
 ## 1.0.1 - 2026-06-17
 
 - Renamed package ecosystem references from CoreState bridge packages to Integration packages.

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Deucarian.Common;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -172,7 +173,7 @@ namespace Deucarian.UIBinding
                 return false;
             }
 
-            DestroyItem(managedItem.GameObject);
+            UnityObjectUtility.DestroySafely(managedItem.GameObject);
             return true;
         }
 
@@ -180,7 +181,7 @@ namespace Deucarian.UIBinding
         {
             foreach (ManagedItem managedItem in _itemsByKey.Values)
             {
-                DestroyItem(managedItem.GameObject);
+                UnityObjectUtility.DestroySafely(managedItem.GameObject);
             }
 
             _itemsByKey.Clear();
@@ -215,7 +216,7 @@ namespace Deucarian.UIBinding
 
             if (settableItem == null)
             {
-                DestroyItem(itemGameObject);
+                UnityObjectUtility.DestroySafely(itemGameObject);
                 throw new InvalidOperationException(
                     $"Prefab '{_itemPrefab.name}' must have a component implementing ISettableItem<{typeof(T).Name}> on its root GameObject.");
             }
@@ -243,22 +244,6 @@ namespace Deucarian.UIBinding
         private static bool IsNullKey(TKey key)
         {
             return (object)key == null;
-        }
-
-        private static void DestroyItem(GameObject itemGameObject)
-        {
-            if (itemGameObject == null)
-            {
-                return;
-            }
-
-            if (Application.isPlaying)
-            {
-                Object.Destroy(itemGameObject);
-                return;
-            }
-
-            Object.DestroyImmediate(itemGameObject);
         }
 
         private sealed class ManagedItem

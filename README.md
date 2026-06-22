@@ -20,7 +20,7 @@ Install the package through Unity Package Manager with a Git URL:
 }
 ```
 
-The current package-ready branch in this repo is `develop`. The package requires Unity `2021.3` or newer and depends on `com.unity.ugui`.
+The current package-ready branch in this repo is `develop`. The package requires Unity `2021.3` or newer and depends on `com.deucarian.common` and `com.unity.ugui`.
 
 For local development, reference the package by file path from a separate Unity test project:
 
@@ -136,7 +136,7 @@ It can be composed with Core State in project code by using repository items as 
 
 ## Versioning
 
-Current package version: `1.0.1`.
+Current package version: `1.1.0`.
 
 Branch strategy:
 
@@ -148,6 +148,7 @@ Use a commit hash or release tag for immutable installs when the repository publ
 ## Limitations
 
 - The package is UGUI-focused and depends on `com.unity.ugui`.
+- The package depends on `com.deucarian.common` for safe generated-item cleanup across Play Mode and Edit Mode.
 - Item prefabs must expose `ISettableItem<T>` on a root component.
 - Keys must be non-null and unique within each container.
 - The package does not provide MVVM, data persistence, app state management, hidden selection synchronization, pooling, virtualization, or async loading.
