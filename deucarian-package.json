@@ -1,0 +1,25 @@
+{
+  "packageId": "com.deucarian.ui-binding",
+  "displayName": "Deucarian UI Binding",
+  "ownedCapabilities": [
+    "ui-binding"
+  ],
+  "runtimeAssemblies": [
+    "Deucarian.UIBinding"
+  ],
+  "editorAssemblies": [],
+  "sampleAssemblies": [
+    "Deucarian.UIBinding.Samples.BasicUsage"
+  ],
+  "testAssemblies": [
+    "Deucarian.UIBinding.Tests"
+  ],
+  "requiredDependencies": [
+    "com.deucarian.common",
+    "com.unity.ugui"
+  ],
+  "optionalVersionDefinedDependencies": [],
+  "allowedDirectDebugCalls": [],
+  "allowedDirectUnityObjectLifetimeCalls": [],
+  "expectedSamplesRoot": "Samples~"
+}
