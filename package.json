@@ -1,6 +1,6 @@
 {
   "name": "com.deucarian.ui-binding",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "displayName": "Deucarian UI Binding",
   "description": "A lightweight Unity UGUI collection-to-UI presentation package for creating, updating, removing, and synchronizing UI item prefabs from data collections.",
   "unity": "2021.3",
@@ -21,7 +21,7 @@
     "presentation"
   ],
   "dependencies": {
-    "com.deucarian.common": "0.1.0",
+    "com.deucarian.common": "0.2.1",
     "com.unity.ugui": "1.0.0"
   },
   "samples": [

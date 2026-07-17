@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 - 2026-07-17
+
+- Applied the portfolio sample contract and aligned the exact Common dependency.
+
 ## 1.1.0 - 2026-06-22
 
 - Added `com.deucarian.common` as a runtime dependency for safe generated-item cleanup.
