@@ -1,6 +1,7 @@
 {
   "packageId": "com.deucarian.ui-binding",
   "displayName": "Deucarian UI Binding",
+  "samplePolicy": "playable-scene",
   "ownedCapabilities": [
     "ui-binding"
   ],
