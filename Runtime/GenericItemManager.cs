@@ -122,8 +122,8 @@ namespace Deucarian.UIBinding
 
                 if (_itemsByKey.TryGetValue(incomingItem.Key, out ManagedItem existingItem))
                 {
-                    existingItem.Data = incomingItem.Data;
                     existingItem.SettableItem.SetData(incomingItem.Data);
+                    existingItem.Data = incomingItem.Data;
                     existingItem.GameObject.transform.SetParent(parent, false);
                     existingItem.GameObject.transform.SetSiblingIndex(index);
                     continue;
@@ -161,8 +161,8 @@ namespace Deucarian.UIBinding
                 return false;
             }
 
-            managedItem.Data = item;
             managedItem.SettableItem.SetData(item);
+            managedItem.Data = item;
             return true;
         }
 
@@ -209,20 +209,27 @@ namespace Deucarian.UIBinding
         private ManagedItem CreateManagedItem(T data, Transform parent)
         {
             GameObject itemGameObject = Object.Instantiate(_itemPrefab, parent);
-            ISettableItem<T> settableItem = itemGameObject
-                .GetComponents<Component>()
-                .OfType<ISettableItem<T>>()
-                .FirstOrDefault();
-
-            if (settableItem == null)
+            try
             {
-                UnityObjectUtility.DestroySafely(itemGameObject);
-                throw new InvalidOperationException(
-                    $"Prefab '{_itemPrefab.name}' must have a component implementing ISettableItem<{typeof(T).Name}> on its root GameObject.");
-            }
+                ISettableItem<T> settableItem = itemGameObject
+                    .GetComponents<Component>()
+                    .OfType<ISettableItem<T>>()
+                    .FirstOrDefault();
+                if (settableItem == null)
+                {
+                    throw new InvalidOperationException(
+                        $"Prefab '{_itemPrefab.name}' must have a component implementing ISettableItem<{typeof(T).Name}> on its root GameObject.");
+                }
 
-            settableItem.SetData(data);
-            return new ManagedItem(data, settableItem, itemGameObject);
+                settableItem.SetData(data);
+                return new ManagedItem(data, settableItem, itemGameObject);
+            }
+            catch
+            {
+                if (itemGameObject != null) itemGameObject.SetActive(false);
+                UnityObjectUtility.DestroySafely(itemGameObject);
+                throw;
+            }
         }
 
         private TKey GetKey(T item)
