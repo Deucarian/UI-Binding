@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2 - Unreleased
+
+- Clean up instantiated items when initial binding fails and preserve tracked data when rebinding fails.
+
 ## 1.1.1 - 2026-07-17
 
 - Applied the portfolio sample contract and aligned the exact Common dependency.

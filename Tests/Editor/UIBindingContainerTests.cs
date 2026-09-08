@@ -229,6 +229,31 @@ namespace Deucarian.UIBinding.Tests
             return new UIBindingContainer<TestData, string>(_parent, _prefab, data => data.Id);
         }
 
+        [Test]
+        public void FailedInitialBindingDoesNotLeaveAnUntrackedChild()
+        {
+            var container = CreateContainer();
+            Assert.Throws<InvalidOperationException>(() => container.Add(new TestData("failed", "throw")));
+            Assert.That(container.Count, Is.Zero);
+            Assert.That(_parent.childCount, Is.Zero);
+            container.Add(new TestData("failed", "retry"));
+            Assert.That(container.Count, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void FailedReplacementKeepsPreviouslyCreatedItemsTrackedForCleanup()
+        {
+            var container = CreateContainer();
+            Assert.Throws<InvalidOperationException>(() => container.ReplaceAll(new[]
+            {
+                new TestData("one", "valid"), new TestData("two", "throw")
+            }));
+            Assert.That(container.Count, Is.EqualTo(1));
+            Assert.That(_parent.childCount, Is.EqualTo(1));
+            container.Clear();
+            Assert.That(_parent.childCount, Is.Zero);
+        }
+
         private sealed class TestData
         {
             public TestData(string id, string label)
@@ -247,6 +272,7 @@ namespace Deucarian.UIBinding.Tests
 
             public void SetData(TestData data)
             {
+                if (data.Label == "throw") throw new InvalidOperationException("Test binding rejected data.");
                 Data = data;
             }
         }
