@@ -6,7 +6,7 @@
 
 The package keeps the workflow explicit: provide a parent `RectTransform`, an item prefab whose root component implements `ISettableItem<T>`, and a key selector. The container creates, updates, removes, clears, and synchronizes item instances without static caches or project-specific UI architecture.
 
-Current package version: `1.1.1`.
+Current package version: `1.1.2`.
 
 ## When to use it
 
