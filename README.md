@@ -1,5 +1,7 @@
 # Deucarian UI Binding
 
+For simple calls and setup, see [Simple usage](Documentation~/SimpleUsage.md).
+
 ## What this is
 
 `com.deucarian.ui-binding` is a Unity UGUI runtime package for presenting data collections as UI item prefabs.
