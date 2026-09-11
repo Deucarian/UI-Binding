@@ -4,6 +4,8 @@ Set the list container and item prefab on UIListHost. The prefab's root implemen
 
 Import the **Simple Usage** sample from Unity Package Manager. Its caller script is:
 
+Definition fields now use named, domain-specific keys. Select an existing definition from the Inspector dropdown or pass the same named key in code. Declare each project key once in a marked key set; ordinary caller methods do not accept raw IDs. Generated keys for asset-authored definitions require no asset reference in the caller. Owner-issued selection and row handles represent runtime instances.
+
 ```csharp
 using UnityEngine;
 
@@ -12,8 +14,8 @@ namespace Deucarian.UIBinding.Samples.SimpleUsage
     public sealed class SimpleUsageExample : MonoBehaviour
     {
         [SerializeField] private UIListHost inventory;
-        public void ShowItems(InventoryItem[] items) => inventory.SetItems(items);
-        public void RemoveItem(string id) => inventory.Remove(id);
+        public System.Collections.Generic.IReadOnlyList<UIListItemHandle<InventoryItem>> ShowItems(InventoryItem[] items) => inventory.SetItems(items);
+        public void RemoveItem(UIListItemHandle<InventoryItem> item) => inventory.Remove(item);
         public sealed class InventoryItem { public string Id; public string Name; }
     }
 }

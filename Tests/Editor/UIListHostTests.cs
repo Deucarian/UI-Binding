@@ -15,10 +15,11 @@ namespace Deucarian.UIBinding.Tests
             {
                 var host = root.AddComponent<UIListHost>();
                 host.Configure((RectTransform)root.transform, prefab, (string item) => item);
-                host.SetItems(new[] { "a", "b" });
+                var handles = host.SetItems(new[] { "a", "b" });
                 Assert.That(host.Count, Is.EqualTo(2));
                 Assert.Throws<InvalidOperationException>(() => host.SetItems(new[] { 1 }));
-                Assert.That(host.Remove("a"), Is.True);
+                Assert.That(host.Remove(handles[0]), Is.True);
+                Assert.That(host.Remove(handles[0]), Is.False);
                 host.Clear();
                 Assert.That(host.Count, Is.Zero);
                 Assert.That(root.transform.childCount, Is.Zero);
