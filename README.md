@@ -1,5 +1,15 @@
 # Deucarian UI Binding
 
+## Typed definition workflow
+
+Configure a typed row prefab once. The list owns generated views; callers reuse returned row handles to remove items.
+
+Start with the [Definition Workflow walkthrough](Documentation~/DefinitionWorkflow.md).
+Import **Definition Workflow** in Package Manager for a configured sample scene
+and short caller scripts. The sample keeps typed contracts and service setup explicit, with reusable
+components for scene callers.
+
+
 For simple calls and setup, see [Simple usage](Documentation~/SimpleUsage.md).
 
 ## What this is
@@ -8,7 +18,7 @@ For simple calls and setup, see [Simple usage](Documentation~/SimpleUsage.md).
 
 The package keeps the workflow explicit: provide a parent `RectTransform`, an item prefab whose root component implements `ISettableItem<T>`, and a key selector. The container creates, updates, removes, clears, and synchronizes item instances without static caches or project-specific UI architecture.
 
-Current package version: `1.1.2`.
+Current package version: `1.2.0`.
 
 ## When to use it
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0] - 2026-09-11
+
+- Add an importable scene demonstrating typed rows through the existing list owner.
+- Include a playable Definition Workflow sample with configured hosts, short callers and usage documentation.
+- Align declared package dependencies with the definition-authoring development wave.
+
+
 ## 1.1.2 - Unreleased
 
 - Clean up instantiated items when initial binding fails and preserve tracked data when rebinding fails.

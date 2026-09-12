@@ -1,0 +1,7 @@
+{
+  "name": "Deucarian.UIBinding.Samples.DefinitionWorkflow",
+  "references": [
+    "Deucarian.UIBinding",
+    "Unity.ugui"
+  ]
+}
