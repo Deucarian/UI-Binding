@@ -2,7 +2,8 @@
   "name": "Deucarian.UIBinding.Samples.BasicUsage",
   "rootNamespace": "Deucarian.UIBinding.Samples.BasicUsage",
   "references": [
-    "Deucarian.UIBinding"
+    "Deucarian.UIBinding",
+    "UnityEngine.UI"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

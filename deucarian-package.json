@@ -10,7 +10,8 @@
   ],
   "editorAssemblies": [],
   "sampleAssemblies": [
-    "Deucarian.UIBinding.Samples.BasicUsage"
+    "Deucarian.UIBinding.Samples.BasicUsage",
+    "Deucarian.UIBinding.Samples.DefinitionWorkflow"
   ],
   "testAssemblies": [
     "Deucarian.UIBinding.Tests"
